@@ -1,30 +1,74 @@
-# React + TypeScript + Vite
+# Hangman with TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  <img src="./src/assets/hangman.gif" />
+</div>
 
-Currently, two official plugins are available:
+## About the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a Hangman game built using React and TypeScript. Players try to guess the word while avoiding completing the hangman figure with incorrect guesses. The game ends when the player either correctly guesses the word or makes too many incorrect guesses.
 
-## Expanding the ESLint configuration
+## Table of Contents
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Usage](#usage)
+- [Project Skeleton](#project-skeleton)
 
-- Configure the top-level `parserOptions` property like this:
+## Live Demo
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+[Hangman with TypeScript](https://hangman-with-typescript.vercel.app/)
+
+## Features
+
+- Random word selection
+- Tracking of guessed and incorrect letters
+- Win and lose conditions
+- Letter guessing via keyboard or on-screen virtual keyboard
+- Ability to restart the game
+
+## Technologies Used
+
+- React
+- TypeScript
+- Vite
+
+## Usage
+
+- When the game starts, a random word is selected.
+- Guess letters using your keyboard or the on-screen virtual keyboard.
+- Each incorrect guess will add a part to the hangman figure.
+- The game is lost if 6 incorrect guesses are made. The game is won if the correct word is guessed.
+- Press the Enter key to restart the game.
+
+## Project Skeleton
+
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Hangman with TypeScript (folder)
+│
+├── public
+│    └── [favicon]
+├── src
+│    ├── assets
+│    │     └── [images]
+│    ├── components
+│    │     ├── HangmanDrawing.tsx
+│    │     ├── HangmanWord.txs
+│    │     └── Keyboard.tsx
+│    ├── assets
+│    │     └── Keyboard.module.css
+│    ├── App.tsx
+│    ├── main.tsx
+│    ├── vite-env.d.ts
+│    └── wordList.json
+├── .eslintrc.cjs
+├── .gitignore
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── tsconfig.app.json
+├── jsconfig.json
+├── jsconfig.node.json
+└── vite.config.ts
+```
